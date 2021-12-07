@@ -116,7 +116,7 @@ sapphire = {
         ]
 }
 #Creating the variable for Liechtenstein with student information
-Liechtenstein = {
+liechtenstein = {
       "student_id": "1993",
       "first_name": "Von",
       "last_name": "Liechtenstein",
@@ -179,8 +179,8 @@ saphire_student_id = students.insert_one(sapphire).inserted_id
 print(" Inserted student record Sam Turner into the students collection with document_id " + str(saphire_student_id))
 
 #Insert the statement with output for Von Liechtenstein 
-Liechtenstein_student_id = students.insert_one(Liechtenstein).inserted_id
-print(" Inserted student record Von Liechtenstein into the students collection with document_id " + str(Liechtenstein_student_id))
+liechtenstein_student_id = students.insert_one(Liechtenstein).inserted_id
+print(" Inserted student record Von Liechtenstein into the students collection with document_id " + str(liechtenstein_student_id))
 
 #The Final the statement for informing the user the program has finished
 input("\n\n End of program, press any ket to exit... ")
