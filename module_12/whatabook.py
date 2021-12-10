@@ -69,7 +69,7 @@ def validate_user():
     # if its valid it will return it.
     if userID in validUserIds:
         validUserID = int(userID)
-        return user_id
+        return userID
 
 # Shows the account menu
 def show_account_menu():
