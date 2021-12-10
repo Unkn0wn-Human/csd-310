@@ -31,7 +31,7 @@ def display_books(_cursor):
     _cursor.execute("SELECT book_id, book_name, author, details from book")
 
     
-    display_books_to_add = cursor.fetchall()
+    books = cursor.fetchall()
 
     print("\n-- DISPLAYING BOOK LISTING --")
 
@@ -68,7 +68,7 @@ def validate_user():
         user_id = input("Enter your user ID: ")
     # if its valid it will return it.
     if user_id in validUserIds:
-        validUserID = int(userID)
+        validUserID = int(user_id)
         return user_id
 
 # Shows the account menu
@@ -171,14 +171,14 @@ try:
                 
                 # this if statement is what allows the user to add books to their wishlist by calling the show_books_to_add() and add_book_to_wishlist() methods.
                 if account_option == 2:
-                    display_books_to_add(cursor, my_user_id)
+                    books(cursor, my_user_id)
                     book_id = int(input("\nEnter the book ID of the book you want to add: "))
                     add_book_to_wishlist(cursor, my_user_id, book_id)
 
                     # this commits the changes above to the database.
                     db.commit()
 
-                    print("\nBook ID: {} was added to your wishlist!".format(book_id))
+                    print("\nBook ID: {} has been added to your wishlist!".format(book_id))
 
                 # this ensures that if the customer is entering negative values or values over 3 that it will keep prompting them to enter the correct value until they do.
                 if account_option < 0 or account_option > 3:
