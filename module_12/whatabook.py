@@ -31,7 +31,7 @@ def display_books(_cursor):
     _cursor.execute("SELECT book_id, book_name, author, details from book")
 
     
-    books = cursor.fetchall()
+    display_books_to_add = cursor.fetchall()
 
     print("\n-- DISPLAYING BOOK LISTING --")
 
@@ -60,16 +60,16 @@ def validate_user():
     validUserIds = ["1", "2", "3"]
 
     # Storing the users input to check if its valid
-    userID = input("Enter your ID: ")
+    user_id = input("Enter your ID: ")
 
     # Checks if valid. If not it asks again.
-    while userID not in validUserIds:
+    while user_id not in validUserIds:
         print("\n** Invalid user ID. **\n")
-        userID = input("Enter your user ID: ")
+        user_id = input("Enter your user ID: ")
     # if its valid it will return it.
-    if userID in validUserIds:
+    if user_id in validUserIds:
         validUserID = int(userID)
-        return userID
+        return user_id
 
 # Shows the account menu
 def show_account_menu():
