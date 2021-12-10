@@ -171,7 +171,7 @@ try:
                 
                 # this if statement is what allows the user to add books to their wishlist by calling the show_books_to_add() and add_book_to_wishlist() methods.
                 if account_option == 2:
-                    books(cursor, my_user_id)
+                    show_books_to_add(cursor, my_user_id)
                     book_id = int(input("\nEnter the book ID of the book you want to add: "))
                     add_book_to_wishlist(cursor, my_user_id, book_id)
 
